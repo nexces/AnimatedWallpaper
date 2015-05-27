@@ -50,7 +50,6 @@ public class AnimatedWallpaperService extends WallpaperService {
         private Handler handler;
 
         private Display display;
-//        private DisplayMetrics displayMetrics;
 
         private float scalingFactor;
         private float verticalShift;
@@ -84,8 +83,6 @@ public class AnimatedWallpaperService extends WallpaperService {
             if (visible) {
                 Canvas canvas = holder.lockCanvas();
                 canvas.save();
-
-                Log.v("AnimatedWallpaperEngine", "Size: " + canvas.getWidth() + " x " + canvas.getHeight());
 
                 // scale canvas using its center as reference (zoom in)
                 canvas.scale(scalingFactor, scalingFactor, canvas.getWidth() / 2, canvas.getHeight() / 2);
@@ -159,19 +156,13 @@ public class AnimatedWallpaperService extends WallpaperService {
             if (widthPixels / movie.width() > heightPixels / movie.height()) {
                 Log.d("AnimatedWallpaperEngine", "Using width for scaling");
                 scalingFactor = (float) widthPixels / (float) movie.width();
-//                horizontalShift = 0;
-//                verticalShift = (heightPixels - (movie.height() * scalingFactor)) / 2 / scalingFactor;
             } else {
                 Log.d("AnimatedWallpaperEngine", "Using height for scaling");
                 scalingFactor = (float) heightPixels / (float) movie.height();
-//                horizontalShift = (widthPixels - (movie.width() * scalingFactor)) / 2 / scalingFactor;
-//                verticalShift = 0;
             }
             Log.d("AnimatedWallpaperEngine", "Used scaling factor: " + Float.toString(scalingFactor));
             Log.d("AnimatedWallpaperEngine", "Scaled movie dimensions: " + (movie.width() * scalingFactor) + " x " + (movie.height() * scalingFactor));
-//            Log.d("AnimatedWallpaperEngine", "Calculated shifts: " + horizontalShift + " x " + verticalShift);
 
-//            scalingFactor = 1.000f;
             horizontalShift = (canvas.getWidth() - movie.width()) / 2;
             verticalShift = (canvas.getHeight() - movie.height()) / 2;
 

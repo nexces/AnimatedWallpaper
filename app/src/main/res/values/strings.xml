@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">AnimatedWallpaper</string>
+    <string name="about_title">Animated wallpaper</string>
+    <string name="about_summary">Some dummy text...</string>
+    <string name="source">Sources</string>
+    <string name="source_url">https://github.com/nexces/AnimatedWallpaper</string>
+    <string name="not_prefs">Not preferences ;)</string>
+    <string name="actual_preferences">Preferences</string>
+    <string name="image">Image</string>
 </resources>
